@@ -51,7 +51,7 @@ def get_custom_data(filename: str = None) -> dict:
     return config
 
 
-@retry(tries=5, delay=300, jitter=120, max_delay=900)
+@retry(tries=3, delay=3000, jitter=120, max_delay=9000)
 def clock(u: DgutIllness, custom_data: dict = None, key: str = None) -> None:
     """
     打卡并输出结果
